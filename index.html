@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reyan Muzeyn Mohammed | Developer & Creator</title>
+
+<meta name="description" content="Reyan Muzeyn Mohammed — Student, Developer and Creator. Creator of ReyuChat.">
+<meta name="theme-color" content="#0b1020">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b1020;
+    color:#fff;
+    line-height:1.6;
+    transition:.3s;
+}
+
+body.light{
+    background:#f4f7fb;
+    color:#111827;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(11,16,32,.9);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    color:#7c8cff;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:14px;
+    opacity:.85;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#8b9cff;
+    opacity:1;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:8px;
+}
+
+.nav-btn{
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);
+    color:#fff;
+    border-radius:10px;
+    padding:8px 11px;
+    cursor:pointer;
+}
+
+.menu-btn{
+    display:none;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding-top:80px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:#5b6cff;
+    filter:blur(130px);
+    opacity:.18;
+    top:10%;
+    left:10%;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#a855f7;
+    filter:blur(130px);
+    opacity:.15;
+    bottom:10%;
+    right:10%;
+}
+
+.hero-content{
+    width:100%;
+    position:relative;
+    z-index:2;
+}
+
+.avatar{
+    width:155px;
+    height:155px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid #7c8cff;
+    box-shadow:0 0 35px rgba(124,140,255,.35);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.avatar:hover{
+    transform:scale(1.05);
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.photo-hint{
+    font-size:12px;
+    opacity:.55;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(40px,8vw,76px);
+    margin-bottom:10px;
+}
+
+.hero h1 span{
+    color:#8290ff;
+}
+
+.hero-subtitle{
+    font-size:20px;
+    opacity:.75;
+    margin-bottom:25px;
+}
+
+.hero-description{
+    max-width:650px;
+    margin:auto;
+    opacity:.7;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    padding:12px 20px;
+    border-radius:12px;
+    background:#6675ff;
+    color:#fff;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(102,117,255,.3);
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+/* SECTIONS */
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    opacity:.6;
+}
+
+/* ABOUT */
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(124,140,255,.4);
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:#8996ff;
+}
+
+/* PROJECTS */
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.project-card{
+    padding:30px;
+    border-radius:20px;
+    background:linear-gradient(145deg,rgba(124,140,255,.12),rgba(255,255,255,.04));
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.project-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.project-card h3{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.project-card p{
+    opacity:.7;
+    margin-bottom:20px;
+}
+
+/* REYUCHAT */
+.reyu-section{
+    background:rgba(255,255,255,.025);
+}
+
+.reyu-intro{
+    max-width:800px;
+    margin:0 auto 40px;
+    text-align:center;
+    opacity:.75;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.feature-card{
+    padding:25px;
+    border-radius:18px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.feature-card h3{
+    color:#8996ff;
+    margin-bottom:10px;
+}
+
+.feature-card ul{
+    padding-left:20px;
+    opacity:.75;
+}
+
+.feature-card li{
+    margin:7px 0;
+}
+
+/* JOURNEY */
+.timeline{
+    max-width:750px;
+    margin:auto;
+}
+
+.timeline-item{
+    border-left:2px solid #7180ff;
+    padding:0 0 30px 25px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:#7180ff;
+    border-radius:50%;
+    left:-7px;
+    top:5px;
+}
+
+.timeline-item h3{
+    color:#8996ff;
+}
+
+/* CONTACT */
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.contact-card{
+    padding:25px;
+    border-radius:18px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.contact-card h3{
+    margin-bottom:7px;
+    color:#8996ff;
+}
+
+.contact-card p{
+    opacity:.75;
+}
+
+.contact-card a{
+    color:#9aa6ff;
+    word-break:break-word;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:35px 15px;
+    border-top:1px solid rgba(255,255,255,.08);
+    opacity:.7;
+}
+
+/* TOP BUTTON */
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#6675ff;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+}
+
+/* LIGHT MODE */
+body.light nav{
+    background:rgba(255,255,255,.9);
+    border-bottom:1px solid #ddd;
+}
+
+body.light .card,
+body.light .feature-card,
+body.light .contact-card,
+body.light .project-card{
+    background:#fff;
+    border-color:#e5e7eb;
+}
+
+body.light .nav-btn{
+    color:#111827;
+    background:#fff;
+    border-color:#ddd;
+}
+
+body.light .btn-outline{
+    color:#111827;
+    border-color:#ccc;
+}
+
+body.light .reyu-section{
+    background:#eef2ff;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        background:#0b1020;
+        border-bottom:1px solid rgba(255,255,255,.1);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .about-grid,
+    .projects-grid,
+    .features,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero-subtitle{
+        font-size:17px;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<div class="container nav-inner">
+
+<a href="#home" class="logo">Reyan.</a>
+
+<div class="nav-links" id="navLinks">
+<a href="#home" data-en="Home" data-am="መነሻ">Home</a>
+<a href="#about" data-en="About" data-am="ስለኔ">About</a>
+<a href="#projects" data-en="Projects" data-am="ፕሮጀክቶች">Projects</a>
+<a href="#reyuchat" data-en="ReyuChat" data-am="ReyuChat">ReyuChat</a>
+<a href="#journey" data-en="Journey" data-am="ጉዞ">Journey</a>
+<a href="#contact" data-en="Contact" data-am="አግኙኝ">Contact</a>
+</div>
+
+<div class="nav-buttons">
+<button class="nav-btn" id="langButton" onclick="toggleLanguage()">አማ</button>
+<button class="nav-btn" onclick="toggleTheme()">☀️</button>
+<button class="nav-btn menu-btn" onclick="toggleMenu()">☰</button>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<input type="file" id="photoInput" accept="image/*" style="display:none;">
+
+<div class="avatar" onclick="openPhotoPicker()" title="Tap to change photo">
+<img id="profileImage" src="profile.jpg" alt="Reyan Muzeyn Mohammed">
+</div>
+
+<div class="photo-hint"
+data-en="👆 Tap my photo to change it"
+data-am="👆 ፎቶዬን ለመቀየር ንካ">
+👆 Tap my photo to change it
+</div>
+
+<h1>
+<span data-en="Hey, I'm" data-am="ሰላም፣ እኔ">Hey, I'm</span>
+Reyan Muzeyn
+</h1>
+
+<div class="hero-subtitle"
+data-en="Student • Developer • Creator"
+data-am="ተማሪ • Developer • Creator">
+Student • Developer • Creator
+</div>
+
+<p class="hero-description"
+data-en="I love technology, creativity and building ideas that can make a difference."
+data-am="ቴክኖሎጂን፣ ፈጠራን እና ለውጥ ሊያመጡ የሚችሉ ሀሳቦችን መገንባት እወዳለሁ።">
+I love technology, creativity and building ideas that can make a difference.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn" data-en="Explore My Projects" data-am="ፕሮጀክቶቼን ይመልከቱ">
+Explore My Projects
+</a>
+
+<a href="#contact" class="btn btn-outline" data-en="Contact Me" data-am="አግኙኝ">
+Contact Me
+</a>
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="About Me" data-am="ስለኔ">About Me</h2>
+<p data-en="A little about who I am" data-am="ስለእኔ ትንሽ">A little about who I am</p>
+</div>
+
+<div class="about-grid">
+
+<div class="card">
+<h3 data-en="Who I Am" data-am="ማን ነኝ?">Who I Am</h3>
+
+<p data-en="My name is Reyan Muzeyn Mohammed. I am a high school student from Worabe City, Ethiopia, interested in technology, development and creative ideas."
+data-am="ስሜ Reyan Muzeyn Mohammed ነው። ከወራቤ ከተማ ኢትዮጵያ የመጣሁ የሀይስኩል ተማሪ ስሆን በቴክኖሎጂ፣ development እና ፈጠራ ሀሳቦች እወዳለሁ።">
+My name is Reyan Muzeyn Mohammed. I am a high school student from Worabe City, Ethiopia, interested in technology, development and creative ideas.
+</p>
+</div>
+
+<div class="card">
+<h3 data-en="My Vision" data-am="ራዕዬ">My Vision</h3>
+
+<p data-en="My goal is to keep learning, create useful digital products and turn creative ideas into real projects."
+data-am="ግቤ በቀጣይነት መማር፣ ጠቃሚ ዲጂታል ምርቶችን መፍጠር እና የፈጠራ ሀሳቦችን ወደ እውነተኛ ፕሮጀክቶች መቀየር ነው።">
+My goal is to keep learning, create useful digital products and turn creative ideas into real projects.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="My Projects" data-am="ፕሮጀክቶቼ">My Projects</h2>
+<p data-en="Things I am building and exploring" data-am="እየገነባሁና እያጠናሁ ያለኋቸው">
+Things I am building and exploring
+</p>
+</div>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<div class="project-icon">💬</div>
+
+<h3>ReyuChat</h3>
+
+<p data-en="A modern communication and AI platform designed to combine messaging, creativity, community and smart tools."
+data-am="መልዕክት፣ ፈጠራ፣ community እና smart tools በአንድ ላይ ለማጣመር የታሰበ ዘመናዊ የመገናኛ እና AI platform።">
+A modern communication and AI platform designed to combine messaging, creativity, community and smart tools.
+</p>
+
+<a href="#reyuchat" class="btn" data-en="View Features" data-am="ባህሪያቱን ይመልከቱ">
+View Features
+</a>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-icon">💡</div>
+
+<h3 data-en="Future Ideas" data-am="የወደፊት ሀሳቦች">
+Future Ideas
+</h3>
+
+<p data-en="More creative digital projects and experiments are part of my future journey."
+data-am="ተጨማሪ የፈጠራ ዲጂታል ፕሮጀክቶች እና experiments የወደፊት ጉዞዬ አካል ናቸው።">
+More creative digital projects and experiments are part of my future journey.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- REYUCHAT -->
+<section id="reyuchat" class="reyu-section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>🚀 ReyuChat</h2>
+
+<p data-en="Future Connection & AI Center"
+data-am="የወደፊት ግንኙነት እና AI ማዕከል">
+Future Connection & AI Center
+</p>
+</div>
+
+<p class="reyu-intro"
+data-en="ReyuChat is designed to be more than a messaging app — combining communication, AI, creativity, community and useful smart tools."
+data-am="ReyuChat ከመልዕክት መላላኪያ መተግበሪያ በላይ እንዲሆን፣ ግንኙነትን፣ AIን፣ ፈጠራን፣ communityን እና smart toolsን በአንድ ላይ ለማጣመር የታሰበ ነው።">
+ReyuChat is designed to be more than a messaging app — combining communication, AI, creativity, community and useful smart tools.
+</p>
+
+<div class="features">
+
+<div class="feature-card">
+<h3>🤖 AI Integration</h3>
+<ul>
+<li>AI Copilot</li>
+<li>AI Image Studio</li>
+<li>AI Theme Generator</li>
+<li>Live Translation & Voice AI</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>💬 Modern Chat Design</h3>
+<ul>
+<li>All • Personal • Unread • Private • Groups</li>
+<li>Chats • Contacts • Settings • Profile</li>
+<li>Phone Login</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🎨 Community & Creative Tools</h3>
+<ul>
+<li>Create Channels & Groups</li>
+<li>Chat Canvas</li>
+<li>Collab Notes</li>
+<li>Pin Board</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🎮 Fun & Interactive</h3>
+<ul>
+<li>Magic Message</li>
+<li>Mini Games</li>
+<li>Digital Gifts</li>
+<li>Stories & Reyu Moments</li>
+<li>Achievements & Streaks</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🔐 Security</h3>
+<ul>
+<li>Scam & Spam Protection</li>
+<li>Login Activity</li>
+<li>App Lock</li>
+<li>Two-Factor Authentication</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>🌐 Future Connection</h3>
+<ul>
+<li>Smart Tools</li>
+<li>Reyu Connect</li>
+<li>Chat Analytics</li>
+<li>Smart Cleanup</li>
+<li>Backup & Restore</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- JOURNEY -->
+<section id="journey">
+
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="My Journey" data-am="ጉዞዬ">My Journey</h2>
+
+<p data-en="Learning, creating and improving"
+data-am="መማር፣ መፍጠር እና ራስን ማሻሻል">
+Learning, creating and improving
+</p>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3 data-en="Student" data-am="ተማሪ">Student</h3>
+
+<p data-en="Continuing my education while exploring technology and programming."
+data-am="ትምህርቴን እየተከታተልኩ ቴክኖሎጂን እና programmingን እያጠናሁ ነው።">
+Continuing my education while exploring technology and programming.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3 data-en="Developer" data-am="Developer">Developer</h3>
+
+<p data-en="Building websites and experimenting with new digital ideas."
+data-am="ድረ-ገጾችን እየገነባሁ እና አዳዲስ ዲጂታል ሀሳቦችን እየሞከርኩ ነው።">
+Building websites and experimenting with new digital ideas.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3 data-en="Creator" data-am="ፈጣሪ">Creator</h3>
+
+<p data-en="Working on ReyuChat and future projects."
+data-am="በReyuChat እና በወደፊት ፕሮጀክቶቼ ላይ እየሰራሁ ነው።">
+Working on ReyuChat and future projects.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2 data-en="Contact Me" data-am="አግኙኝ">
+Contact Me
+</h2>
+
+<p data-en="Let's connect"
+data-am="እንገናኝ">
+Let's connect
+</p>
+
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>📱 Phone</h3>
+<p>
+<a href="tel:+251909499223">+251 909 499 223</a>
+</p>
+</div>
+
+<div class="contact-card">
+<h3>📧 Email</h3>
+<p>
+<a href="mailto:reyanmuzeyn@gmail.com">
+reyanmuzeyn@gmail.com
+</a>
+</p>
+</div>
+
+<div class="contact-card">
+<h3>✈️ Telegram</h3>
+<p>
+<a href="https://t.me/reyan_muzeyn" target="_blank">
+@reyan_muzeyn
+</a>
+</p>
+</div>
+
+<div class="contact-card">
+<h3>💬 WhatsApp</h3>
+<p>
+<a href="https://wa.me/251909499223" target="_blank">
+Chat on WhatsApp
+</a>
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<p>
+© 2026 Reyan Muzeyn Mohammed.
+<span data-en="Built with passion and creativity."
+data-am="በፍቅር እና በፈጠራ የተሰራ።">
+Built with passion and creativity.
+</span>
+</p>
+
+</footer>
+
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+
+<script>
+
+/* LANGUAGE */
+let currentLanguage = "en";
+
+function toggleLanguage(){
+
+    currentLanguage =
+        currentLanguage === "en" ? "am" : "en";
+
+    document.querySelectorAll("[data-en]").forEach(function(element){
+
+        element.textContent =
+            element.getAttribute("data-" + currentLanguage);
+
+    });
+
+    document.documentElement.lang =
+        currentLanguage === "am" ? "am" : "en";
+
+    document.getElementById("langButton").textContent =
+        currentLanguage === "en" ? "አማ" : "EN";
+}
+
+
+/* THEME */
+function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    const theme =
+        document.body.classList.contains("light")
+        ? "light"
+        : "dark";
+
+    localStorage.setItem("reyuTheme",theme);
+}
+
+try{
+
+    const savedTheme =
+        localStorage.getItem("reyuTheme");
+
+    if(savedTheme === "light"){
+        document.body.classList.add("light");
+    }
+
+}catch(error){
+    console.log("Theme could not be loaded.");
+}
+
+
+/* PROFILE PHOTO */
+const photoInput =
+    document.getElementById("photoInput");
+
+const profileImage =
+    document.getElementById("profileImage");
+
+
+function openPhotoPicker(){
+
+    photoInput.click();
+
+}
+
+
+try{
+
+    const savedPhoto =
+        localStorage.getItem("reyuProfilePhoto");
+
+    if(savedPhoto){
+
+        profileImage.src =
+            savedPhoto;
+
+    }
+
+}catch(error){
+
+    console.log("Could not load saved photo.");
+
+}
+
+
+photoInput.addEventListener("change",function(event){
+
+    const file =
+        event.target.files[0];
+
+    if(!file) return;
+
+
+    if(!file.type.startsWith("image/")){
+
+        alert("Please select an image.");
+
+        return;
+
+    }
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload = function(e){
+
+        const imageData =
+            e.target.result;
+
+        profileImage.src =
+            imageData;
+
+
+        try{
+
+            localStorage.setItem(
+                "reyuProfilePhoto",
+                imageData
+            );
+
+        }catch(error){
+
+            alert(
+                "The image is too large to save. Please choose a smaller photo."
+            );
+
+        }
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+});
+
+
+/* MOBILE MENU */
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("active");
+
+}
+
+
+/* CLOSE MENU AFTER CLICK */
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+            .getElementById("navLinks")
+            .classList.remove("active");
+
+    });
+
+});
+
+
+/* TOP BUTTON */
+window.addEventListener("scroll",function(){
+
+    const topBtn =
+        document.getElementById("topBtn");
+
+    if(window.scrollY > 400){
+
+        topBtn.style.display = "block";
+
+    }else{
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
