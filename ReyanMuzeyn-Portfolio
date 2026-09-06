@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0907" />
+
+  <title>Reyan Muzeyn Mohammed | Developer • Designer • Creator</title>
+  <meta name="title" content="Reyan Muzeyn Mohammed | Developer • Designer • Creator" />
+  <meta name="description" content="Crafting clean web architectures, modern intuitive interfaces, and intelligent digital products. Creator of ReyuChat." />
+  <meta name="keywords" content="Reyan Muzeyn, ReyuChat, Ethiopian developer, web developer, UI UX designer, creator, tech innovator" />
+  <meta name="author" content="Reyan Muzeyn Mohammed" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Reyan Muzeyn Mohammed | Developer • Designer • Creator" />
+  <meta property="og:description" content="Designing Tomorrow, Building Today. Creator of ReyuChat and builder of future digital experiences." />
+  <meta property="og:image" content="profile.jpg" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Reyan Muzeyn Mohammed | Developer • Designer • Creator" />
+  <meta property="twitter:description" content="Designing Tomorrow, Building Today. Creator of ReyuChat and builder of future digital experiences." />
+  <meta property="twitter:image" content="profile.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --accent-glow: rgba(245, 158, 11, 0.28);
+      --accent-soft: rgba(245, 158, 11, 0.1);
+      --accent-border: rgba(245, 158, 11, 0.32);
+
+      --coffee-soft: rgba(180, 83, 9, 0.12);
+      --coffee-border: rgba(180, 83, 9, 0.35);
+
+      --bg: #0d0907;
+      --bg-surface: #18110d;
+      --card-bg: rgba(255, 248, 240, 0.04);
+      --border: rgba(245, 235, 220, 0.1);
+      --border-light: rgba(245, 235, 220, 0.18);
+
+      --text: #faf6f0;
+      --text-muted: #b8aba0;
+      --text-subtle: #7d7065;
+
+      --nav-bg: #0d0907;
+      --shadow-sm: 0 10px 25px rgba(0, 0, 0, 0.6);
+      --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.light {
+      --accent: #b45309;
+      --accent-hover: #92400e;
+      --accent-glow: rgba(180, 83, 9, 0.18);
+      --accent-soft: rgba(180, 83, 9, 0.08);
+      --accent-border: rgba(180, 83, 9, 0.25);
+
+      --coffee-soft: rgba(120, 53, 15, 0.08);
+      --coffee-border: rgba(120, 53, 15, 0.25);
+
+      --bg: #fdfbf7;
+      --bg-surface: #ffffff;
+      --card-bg: #ffffff;
+      --border: #ebdccf;
+      --border-light: #d8c2b0;
+
+      --text: #261911;
+      --text-muted: #5e493b;
+      --text-subtle: #8a7363;
+
+      --nav-bg: #fdfbf7;
+      --shadow-sm: 0 10px 25px rgba(38, 25, 17, 0.05);
+      --shadow-lg: 0 20px 40px rgba(38, 25, 17, 0.08);
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.35s ease, color 0.35s ease;
+    }
+
+    ::selection { background: var(--accent); color: #ffffff; }
+
+    .container {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+
+    #particles {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+      pointer-events: none;
+    }
+
+    .background-glow {
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: var(--accent-glow);
+      filter: blur(140px);
+      z-index: -2;
+      pointer-events: none;
+      animation: ambientGlow 15s infinite alternate ease-in-out;
+    }
+
+    .glow-one { top: -180px; left: -120px; }
+    .glow-two { right: -180px; bottom: -180px; animation-delay: 5s; }
+
+    @keyframes ambientGlow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(70px, 40px) scale(1.15); }
+    }
+
+    #progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #fbbf24);
+      z-index: 9999;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    /* ግልጽና ጎልቶ የሚታይ የሰዓት ባጅ (Prominent Time Badge) */
+    .time-badge-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      background: var(--card-bg);
+      border: 1px solid var(--accent-border);
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      color: var(--text);
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px var(--accent-soft);
+    }
+
+    .time-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      animation: pulse 1.8s infinite;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .icon-btn:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .menu-btn { display: none; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 110px 0 60px;
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+
+    .badge-available {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    .green-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulseGreen 1.6s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.5; }
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .hero h1 .accent { color: var(--accent); }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      min-height: 2rem;
+      font-family: var(--font-mono);
+    }
+
+    .hero-description {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 580px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background: var(--accent);
+      box-shadow: 0 8px 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--text);
+      border-color: var(--border-light);
+      background: var(--card-bg);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-resume {
+      color: var(--accent);
+      border-color: var(--accent-border);
+      background: var(--accent-soft);
+    }
+
+    .btn-resume:hover {
+      background: var(--accent);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .hero-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .photo-frame {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--accent), rgba(217, 119, 6, 0.2), var(--border));
+      box-shadow: 0 0 35px var(--accent-glow);
+      position: relative;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      border: 3px solid var(--bg);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-hint {
+      margin-top: 0.8rem;
+      color: var(--text-subtle);
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-block: 1px solid var(--border);
+      background: var(--card-bg);
+    }
+
+    .stat {
+      padding: 2.2rem 1rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-number {
+      font-size: 2.2rem;
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 0.2rem;
+      font-family: var(--font-mono);
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    section { padding: 85px 0; }
+    .section-head { margin-bottom: 3rem; }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-mono);
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      max-width: 650px;
+      font-size: 1rem;
+    }
+
+    .spotlight-card {
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .spotlight-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-border);
+    }
+
+    .card-content { position: relative; z-index: 1; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--card-bg);
+      padding: 2.2rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-border);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .project-icon { font-size: 2.4rem; }
+
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background: var(--coffee-soft);
+      border: 1px solid var(--coffee-border);
+      color: var(--accent);
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    body:not(.light) .tech-pill { background: rgba(255, 255, 255, 0.04); }
+
+    .flagship-box {
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--coffee-soft), var(--card-bg));
+      border: 1px solid var(--coffee-border);
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .flagship-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .flagship-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .flagship-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f59e0b, #d97706, #78350f);
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      color: #ffffff;
+    }
+
+    .flagship-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 1.8rem;
+    }
+
+    .flagship-feat-card {
+      background: rgba(0, 0, 0, 0.18);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      transition: var(--transition);
+    }
+
+    body.light .flagship-feat-card { background: rgba(255, 255, 255, 0.85); }
+
+    .flagship-feat-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .flagship-feat-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .flagship-feat-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item:last-child { border-bottom: none; }
+
+    .contact-item-left {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      font-size: 1.2rem;
+      border: 1px solid var(--accent-border);
+      color: var(--accent);
+    }
+
+    .contact-item a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .contact-item a:hover { color: var(--accent); }
+
+    .copy-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .copy-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .copy-btn.copied {
+      background: #10b981;
+      border-color: #10b981;
+      color: #ffffff;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 1.1rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    body:not(.light) .form-input, body:not(.light) .form-textarea {
+      background: rgba(255, 248, 240, 0.03);
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-textarea { resize: vertical; min-height: 110px; }
+
+    .quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .chip-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 11px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .chip-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+      z-index: 900;
+      transition: var(--transition);
+    }
+
+    .whatsapp svg { width: 26px; height: 26px; fill: #ffffff; }
+
+    #backTop {
+      position: fixed;
+      right: 20px;
+      bottom: 80px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 900;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    #backTop.show { display: flex; }
+
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--accent);
+      color: #ffffff;
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 10px 30px var(--accent-glow);
+      z-index: 3000;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.2rem;
+      }
+      .badge-row { justify-content: center; }
+      .hero-photo { order: -1; }
+      .photo-frame {
+        width: 165px;
+        height: 165px;
+        padding: 5px;
+      }
+      .hero-description { margin-inline: auto; }
+      .hero-buttons { justify-content: center; }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        border-bottom: 2px solid var(--accent);
+        flex-direction: column;
+        padding: 1.5rem 0;
+        gap: 1.2rem;
+        display: none;
+        z-index: 99999;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+      }
+      .nav-links.active { display: flex; }
+      .menu-btn { display: inline-flex; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .flagship-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--border); }
+    }
+
+    @media (max-width: 500px) {
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .flagship-box { padding: 1.5rem; }
+      .spotlight-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="particles"></canvas>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+  <div id="progress"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Reyan<span>.dev</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-en="Home" data-am="መነሻ">Home</a></li>
+        <li><a href="#about" data-en="About" data-am="ስለእኔ">About</a></li>
+        <li><a href="#projects" data-en="Projects" data-am="ፕሮጀክቶች">Projects</a></li>
+        <li><a href="#reyuchat" data-en="ReyuChat" data-am="ReyuChat">ReyuChat</a></li>
+        <li><a href="#contact" data-en="Contact" data-am="አግኙኝ">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="soundButton" onclick="toggleSound()" aria-label="Toggle UI Sound" title="Sound: ON">🔊</button>
+        <button class="icon-btn" id="langButton" onclick="toggleLanguage()" aria-label="Toggle language">አማ</button>
+        <button class="icon-btn" id="themeButton" onclick="toggleTheme()" aria-label="Toggle theme">&#9788;</button>
+        <button class="icon-btn menu-btn" onclick="toggleMenu()" aria-label="Open mobile menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-container">
+      <div class="hero-content reveal">
+        
+        <div class="time-badge-hero" title="Worabe, Ethiopia Live Time (EAT)">
+          <span class="time-badge-dot"></span>
+          <span>📍 Worabe, Ethiopia:</span>
+          <strong id="localClock" style="font-family: var(--font-mono); color: var(--accent);">--:--:--</strong>
+        </div>
+
+        <div class="badge-row">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span data-en="ETHIOPIAN DEVELOPER &amp; CREATOR" data-am="የኢትዮጵያ ዲጂታል ፈጣሪና ገንቢ">ETHIOPIAN DEVELOPER &amp; CREATOR</span>
+          </div>
+          <div class="badge-available">
+            <span class="green-dot"></span>
+            <span data-en="Available for Projects" data-am="ለአዳዲስ ስራዎች ክፍት">Available for Projects</span>
+          </div>
+        </div>
+        
+        <h1>
+          <span data-en="Designing Tomorrow," data-am="የነገውን በመንደፍ፣">Designing Tomorrow,</span><br />
+          <span class="accent" data-en="Building Today." data-am="ዛሬን እንገነባለን።">Building Today.</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          &gt; <span id="typingText">Developer &bull; Designer &bull; Creator</span>
+        </div>
+
+        <p class="hero-description"
+           data-en="Crafting clean web architectures, modern intuitive interfaces, and intelligent digital products. Creator of ReyuChat and passionate about turning creative concepts into practical technology that makes a difference."
+           data-am="ፅዱ የሆኑ የWeb አርክቴክቸሮችን፣ ዘመናዊና ማራኪ የተጠቃሚ ገጾችን እንዲሁም ጠቃሚ ዲጂታል ምርቶችን እገነባለሁ። የReyuChat ፈጣሪና አዳዲስ የፈጠራ ሀሳቦችን ወደ እውነተኛ ቴክኖሎጂ መቀየር የምወድ።">
+          Crafting clean web architectures, modern intuitive interfaces, and intelligent digital products. Creator of ReyuChat and passionate about turning creative concepts into practical technology that makes a difference.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary" data-en="View Projects &darr;" data-am="ስራዎችን ይመልከቱ &darr;">View Projects &darr;</a>
+          <a href="#contact" class="btn btn-outline" data-en="Connect With Me" data-am="አግኙኝ">Connect With Me</a>
+          <button type="button" onclick="downloadActiveResume()" class="btn btn-resume" data-en="Resume 📄" data-am="CV አውርድ 📄">Resume 📄</button>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal">
+        <input type="file" id="photoInput" accept="image/*" style="display:none;" />
+        <div class="photo-frame">
+          <div class="avatar" onclick="openPhotoPicker()" title="Tap to customize your photo">
+            <img id="profileImage" src="profile.jpg" alt="Reyan Muzeyn Mohammed" loading="lazy" />
+          </div>
+        </div>
+        <div class="photo-hint">
+          <span>👆</span>
+          <span data-en="Tap photo to change avatar" data-am="ፎቶ ለመቀየር ይጫኑ">Tap photo to change avatar</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat-number">03+</div>
+          <div class="stat-label" data-en="Core Projects" data-am="ዋና ስራዎች">Core Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label" data-en="Dedication &amp; Code Craft" data-am="የኮዲንግ ጥራትና ትጋት">Dedication &amp; Code Craft</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">UI/UX</div>
+          <div class="stat-label" data-en="Modern Interface Design" data-am="ዘመናዊ ዲጂታል ንድፍ">Modern Interface Design</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">&infin;</div>
+          <div class="stat-label" data-en="Visionary Future Labs" data-am="የወደፊት ራዕይ ላቦራቶሪዎች">Visionary Future Labs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">01 &mdash; PHILOSOPHY</div>
+        <h2 data-en="Who I Am &amp; What I Craft" data-am="ስለ እኔ እና ስራዎቼ">Who I Am &amp; What I Craft</h2>
+        <p data-en="Blending clean technical architecture with refined visual design to create software that matters."
+           data-am="ጠንካራ የቴክኖሎጂ መሰረትን ከማራኪ ዲዛይን ጋር በማጣመር ውጤታማ ሶፍትዌር እገነባለሁ።">
+          Blending clean technical architecture with refined visual design to create software that matters.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <div class="spotlight-card reveal">
+          <div class="card-content">
+            <h3 data-en="Engineering Philosophy" data-am="የስራ መርሆዬ">Engineering Philosophy</h3>
+            <p style="color:var(--text-muted); margin: 0.8rem 0;"
+               data-en="Driven by curiosity. I leverage web standards, low-latency database engines, and neural models to produce scalable, high-performance web applications without bloat."
+               data-am="በከፍተኛ ጉጉት የምመራ ነኝ። ዘመናዊ የWeb ደረጃዎችን፣ ፈጣን ዳታቤዞችንና የAI ሞዴሎችን በመጠቀም ጥራት ያለው ሶፍትዌር እገነባለሁ።">
+              Driven by curiosity. I leverage web standards, low-latency database engines, and neural models to produce scalable, high-performance web applications without bloat.
+            </p>
+          </div>
+        </div>
+
+        <div class="spotlight-card reveal">
+          <div class="card-content">
+            <h3 data-en="Core Focus" data-am="ዋና ትኩረቴ">Core Focus</h3>
+            <p style="color:var(--text-muted); margin: 0.8rem 0;"
+               data-en="Specializing in clean web frontends, backend systems with Supabase/PostgreSQL, intuitive drawing canvases, and human-centric UI/UX."
+               data-am="በዘመናዊ የWeb ግንባታ፣ በSupabase/PostgreSQL የጀርባ ሲስተም፣ በይነተገብራዊ የስዕል መወያያ (Canvas) እና በተጠቃሚ ምቹ UI/UX ላይ አተኩራለሁ።">
+              Specializing in clean web frontends, backend systems with Supabase/PostgreSQL, intuitive drawing canvases, and human-centric UI/UX.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">02 &mdash; PORTFOLIO</div>
+        <h2 data-en="Featured Projects &amp; Products" data-am="የተመረጡ ስራዎችና ምርቶች">Featured Projects &amp; Products</h2>
+        <p data-en="Explore products built with modern web technologies, performance rigor, and user obsession."
+           data-am="በዘመናዊ የWeb ቴክኖሎጂዎች፣ በፍጥነት እና በጥራት የተገነቡ የተመረጡ ስራዎች።">
+          Explore products built with modern web technologies, performance rigor, and user obsession.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-top">
+            <div class="project-icon">☕</div>
+            <span class="project-tag">FLAGSHIP</span>
+          </div>
+          <h3>ReyuChat Core</h3>
+          <p data-en="Fullstack messaging platform featuring Supabase Realtime WebSockets, ephemeral 24h stories, touch whiteboard canvas, and voice note recording."
+             data-am="በSupabase Realtime፣ በ24 ሰዓት ስቶሪዎች፣ በስዕል መወያያ (Canvas) እና በድምጽ መልእክት የተገነባ የተሟላ የውይይት መድረክ።">
+            Fullstack messaging platform featuring Supabase Realtime WebSockets, ephemeral 24h stories, touch whiteboard canvas, and voice note recording.
+          </p>
+          <div class="project-tech" style="margin-bottom:1.2rem;">
+            <span class="tech-pill">Supabase v2</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">HTML5 Canvas</span>
+            <span class="tech-pill">MediaRecorder</span>
+          </div>
+          <a href="#reyuchat" class="btn btn-outline" style="align-self:flex-start; padding: 0.5rem 1rem; font-size: 0.8rem;">Explore Platform →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <div class="project-icon">🎨</div>
+            <span class="project-tag">AI ENGINE</span>
+          </div>
+          <h3>Reyu AI Studio</h3>
+          <p data-en="Generative UI theme generator converting text prompts into customized, beautiful web styling palettes and visual color tokens."
+             data-am="ተጠቃሚዎች ከሚጽፉት ሀሳብ በመነሳት ዘመናዊና ውብ የዌብሳይት የቀለም ቅንብሮችን የሚያመነጭ የAI ረዳት።">
+            Generative UI theme generator converting text prompts into customized, beautiful web styling palettes and visual color tokens.
+          </p>
+          <div class="project-tech" style="margin-bottom:1.2rem;">
+            <span class="tech-pill">JavaScript ES6+</span>
+            <span class="tech-pill">CSS Variables</span>
+            <span class="tech-pill">Prompt Engineering</span>
+          </div>
+          <button type="button" onclick="openStudioDemo()" class="btn btn-outline" style="align-self:flex-start; padding: 0.5rem 1rem; font-size: 0.8rem;">Preview Palette ↗</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reyuchat">
+    <div class="container">
+      <div class="flagship-box reveal">
+        <div class="flagship-header">
+          <div class="flagship-title-wrap">
+            <div class="flagship-icon">☕</div>
+            <div>
+              <h2 style="color:var(--text);">ReyuChat Platform Deep-Dive</h2>
+              <p style="color:var(--text-muted); font-size:0.9rem;">Engineered with Supabase Realtime, Audio Memos &amp; Multi-Modal AI</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <span class="tech-pill">Supabase v2</span>
+            <span class="tech-pill">Realtime WebSockets</span>
+            <span class="tech-pill">MediaRecorder API</span>
+            <span class="tech-pill">SHA-256 Vault</span>
+          </div>
+        </div>
+
+        <p style="color:var(--text-muted); max-width:850px; font-size:0.98rem; line-height:1.65;">
+          ReyuChat is an actual, multi-featured communication ecosystem. Built directly on web standards, it handles real-time peer state updates, encrypted message exchanges, voice note streaming, and generative AI agents.
+        </p>
+
+        <div class="flagship-grid">
+          <div class="flagship-feat-card">
+            <h4>⚡ Supabase Realtime &amp; Presence</h4>
+            <p>PostgreSQL realtime channels and presence tracking active contacts, live typing indicators, and sub-100ms message arrivals.</p>
+          </div>
+          <div class="flagship-feat-card">
+            <h4>📸 24-Hour Ephemeral Stories</h4>
+            <p>Automatic expiration logic, segmented progress bars, video/image streaming, and atomic user view tracking in cloud storage.</p>
+          </div>
+          <div class="flagship-feat-card">
+            <h4>🎨 Reactive Chat Canvas</h4>
+            <p>HTML5 interactive canvas supporting continuous touch &amp; pointer drawing, dynamic stroke colors, and binary PNG blob transmission.</p>
+          </div>
+          <div class="flagship-feat-card">
+            <h4>🎙️ Voice Engine &amp; Synthesizer</h4>
+            <p>Utilizes native browser `MediaRecorder` with WebM/M4A compression for voice memos, combined with `SpeechRecognition` for AI voice chats.</p>
+          </div>
+          <div class="flagship-feat-card">
+            <h4>🔒 SHA-256 Vault &amp; Device Log</h4>
+            <p>Client-side cryptographic PIN hashing via Web Crypto API (`crypto.subtle`), active session monitoring, and scam link heuristics.</p>
+          </div>
+          <div class="flagship-feat-card">
+            <h4>✨ Rich Formatting &amp; Reactions</h4>
+            <p>In-message regex parsing for spoilers (`||text||`), codeblocks, strike-through, inline star markers, and interactive emoji reaction pickers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">03 &mdash; GET IN TOUCH</div>
+        <h2 data-en="Let's Connect &amp; Collaborate" data-am="እንገናኝ እና አብረን እንስራ">Let's Connect &amp; Collaborate</h2>
+        <p data-en="Have an idea or inquiry? Fill in the form or copy my direct channels with a single tap."
+           data-am="ሀሳብ ወይም ጥያቄ አለዎት? ከታች ያለውን ቅጽ ይሙሉ ወይም በቀላሉ በአንድ ጠቅታ አድራሻዎቼን ኮፒ ያድርጉ።">
+          Have an idea or inquiry? Fill in the form or copy my direct channels with a single tap.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="spotlight-card reveal">
+          <div class="card-content">
+            <h3 style="margin-bottom: 1rem; color:var(--text);">Direct Channels</h3>
+            
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon">📱</div>
+                <div>
+                  <small style="color:var(--text-subtle); font-family:var(--font-mono);">PHONE</small><br />
+                  <a href="tel:+251909499223">+251 909 499 223</a>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('+251909499223', this)">Copy</button>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon">📧</div>
+                <div>
+                  <small style="color:var(--text-subtle); font-family:var(--font-mono);">EMAIL</small><br />
+                  <a href="mailto:reyanmuzeyn@gmail.com">reyanmuzeyn@gmail.com</a>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('reyanmuzeyn@gmail.com', this)">Copy</button>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon">✈️</div>
+                <div>
+                  <small style="color:var(--text-subtle); font-family:var(--font-mono);">TELEGRAM</small><br />
+                  <a href="https://t.me/reyan_muzeyn" target="_blank" rel="noopener noreferrer">@reyan_muzeyn &nearr;</a>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('@reyan_muzeyn', this)">Copy</button>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="contact-icon">💬</div>
+                <div>
+                  <small style="color:var(--text-subtle); font-family:var(--font-mono);">WHATSAPP</small><br />
+                  <a href="https://wa.me/251909499223" target="_blank" rel="noopener noreferrer">+251 909 499 223 &nearr;</a>
+                </div>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('+251909499223', this)">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="spotlight-card reveal">
+          <div class="card-content">
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="userName" data-en="Full Name" data-am="ሙሉ ስም">Full Name</label>
+                <input type="text" id="userName" name="name" class="form-input" placeholder="e.g. Abebe Kebede" required />
+              </div>
+              <div class="form-group">
+                <label for="userEmail" data-en="Email Address" data-am="ኢሜይል አድራሻ">Email Address</label>
+                <input type="email" id="userEmail" name="email" class="form-input" placeholder="e.g. abebe@example.com" required />
+              </div>
+              
+              <div class="form-group">
+                <label data-en="Quick Topic Shortcuts:" data-am="ፈጣን የርዕስ አማራጮች:">Quick Topic Shortcuts:</label>
+                <div class="quick-chips">
+                  <button type="button" class="chip-btn" onclick="fillQuickMessage('💼 Hello Reyan, I am interested in collaborating with you on a web project.')">💼 Project Collaboration</button>
+                  <button type="button" class="chip-btn" onclick="fillQuickMessage('🚀 Hi Reyan, I would like to learn more about the ReyuChat platform.')">🚀 ReyuChat Inquiry</button>
+                  <button type="button" class="chip-btn" onclick="fillQuickMessage('👋 Hey Reyan! Just dropping by to say hello and appreciate your work.')">👋 Just saying Hi!</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="userMessage" data-en="Your Message" data-am="መልእክትዎ">Your Message</label>
+                <textarea id="userMessage" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;" data-en="Transmit Message &rarr;" data-am="መልእክቱን ላክ &rarr;">Transmit Message &rarr;</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> <strong>Reyan Muzeyn Mohammed</strong>. Built with curiosity &amp; relentless ambition.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/251909499223" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.01 2.58.13.17 1.76 2.68 4.26 3.76.6.26 1.06.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29z"/>
+    </svg>
+  </a>
+  <button id="backTop" aria-label="Back to top">&uarr;</button>
+
+  <div id="toast">Message delivered to Reyan's Inbox!</div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* =========================================================
+       1. LIVE LOCAL CLOCK (Worabe, Ethiopia / UTC+3)
+    ========================================================= */
+    function updateClock() {
+      const clockEl = document.getElementById("localClock");
+      if (!clockEl) return;
+      const now = new Date();
+      const options = {
+        timeZone: "Africa/Addis_Ababa",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+      };
+      clockEl.textContent = new Intl.DateTimeFormat("en-US", options).format(now);
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    /* =========================================================
+       2. NATIVE WEB AUDIO API
+    ========================================================= */
+    let soundEnabled = true;
+    let audioCtx = null;
+
+    function playClickSound(freq = 600, duration = 0.05) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === "suspended") audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const soundBtn = document.getElementById("soundButton");
+      soundBtn.textContent = soundEnabled ? "🔊" : "🔇";
+      soundBtn.title = soundEnabled ? "Sound: ON" : "Sound: OFF";
+      if (soundEnabled) playClickSound(800, 0.08);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("button, .btn, .icon-btn, .nav-links a, .chip-btn").forEach(el => {
+        el.addEventListener("click", () => playClickSound(650, 0.04));
+      });
+    });
+
+    /* =========================================================
+       3. ACTIVE RESUME DOWNLOAD GENERATOR
+    ========================================================= */
+    function downloadActiveResume() {
+      playClickSound(750, 0.08);
+      const cvContent = `REYAN MUZEYN MOHAMMED
+==========================================
+Role: Full-stack Web Developer • Designer • Creator
+Location: Worabe, Ethiopia
+Email: reyanmuzeyn@gmail.com
+Phone: +251 909 499 223
+Telegram: @reyan_muzeyn
+
+PROFESSIONAL SUMMARY
+------------------------------------------
+Passionate and forward-thinking digital builder specializing in modern, 
+responsive web architectures, reactive client interfaces, and real-time platforms.
+Creator and lead architect of ReyuChat ecosystem.
+
+CORE TECHNICAL SKILLS
+------------------------------------------
+• Frontend: HTML5, CSS3/Flexbox/Grid, Modern JavaScript (ES6+), HTML5 Canvas API
+• Backend & Realtime: Supabase v2, PostgreSQL, Realtime WebSockets, REST APIs
+• Audio & Media: Browser MediaRecorder API, SpeechRecognition API, Web Audio API
+• Security & Crypto: Client-Side SHA-256 Hashing, Web Crypto API, Session State
+• Tooling: Git, Mobile-First UI/UX, Performance Optimization
+
+FLAGSHIP PROJECT: REYUCHAT
+------------------------------------------
+• Fullstack real-time messaging ecosystem built natively on web standards.
+• Features: Realtime presence & contact status, 24h self-destructing stories, 
+  interactive touch drawing canvas, encrypted PIN vault, and audio memos.
+
+EDUCATION & PASSION
+------------------------------------------
+• Continually experimenting with ambient AI interfaces, distributed state fabrics, 
+  and ultra-performant, zero-bloat web engineering.
+
+Generated live from portfolio: https://reyanmuzeyn-ai.github.io/ReyanMuzeyn-Portfolio/
+© 2026 Reyan Muzeyn Mohammed.`;
+
+      const blob = new Blob([cvContent], { type: "text/plain;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Reyan_Muzeyn_Resume.txt";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast("Resume downloaded successfully! 📄");
+    }
+
+    function openStudioDemo() {
+      playClickSound(700, 0.06);
+      showToast("AI Studio Engine active! Generating palette...");
+      document.body.classList.toggle("light");
+      const themeBtn = document.getElementById("themeButton");
+      const isLight = document.body.classList.contains("light");
+      themeBtn.innerHTML = isLight ? "&#9790;" : "&#9788;";
+      localStorage.setItem("reyuTheme", isLight ? "light" : "dark");
+    }
+
+    /* =========================================================
+       4. ONE-CLICK CLIPBOARD COPY & QUICK PRE-FILL
+    ========================================================= */
+    function copyToClipboard(text, btnElement) {
+      playClickSound(700, 0.05);
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btnElement.textContent;
+        btnElement.textContent = "Copied! ✓";
+        btnElement.classList.add("copied");
+        setTimeout(() => {
+          btnElement.textContent = originalText;
+          btnElement.classList.remove("copied");
+        }, 2200);
+      }).catch(() => {
+        showToast("Copied: " + text);
+      });
+    }
+
+    function fillQuickMessage(messageText) {
+      playClickSound(600, 0.04);
+      const msgArea = document.getElementById("userMessage");
+      msgArea.value = messageText;
+      msgArea.focus();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 4000);
+    }
+
+    /* =========================================================
+       5. NAVIGATION & CONTROLS
+    ========================================================= */
+    const navLinks = document.getElementById("navLinks");
+    function toggleMenu() { 
+      navLinks.classList.toggle("active"); 
+    }
+    
+    document.querySelectorAll(".nav-links a").forEach(l => {
+      l.addEventListener("click", () => navLinks.classList.remove("active"));
+    });
+
+    const themeBtn = document.getElementById("themeButton");
+    if (localStorage.getItem("reyuTheme") === "light") {
+      document.body.classList.add("light");
+      themeBtn.innerHTML = "&#9790;";
+    }
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle("light");
+      themeBtn.innerHTML = isLight ? "&#9790;" : "&#9788;";
+      localStorage.setItem("reyuTheme", isLight ? "light" : "dark");
+    }
+
+    let currentLang = "en";
+    function toggleLanguage() {
+      currentLang = currentLang === "en" ? "am" : "en";
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+      document.documentElement.lang = currentLang;
+      document.getElementById("langButton").textContent = currentLang === "en" ? "አማ" : "EN";
+    }
+
+    const photoInput = document.getElementById("photoInput");
+    const profileImg = document.getElementById("profileImage");
+    function openPhotoPicker() { photoInput.click(); }
+    
+    const savedPhoto = localStorage.getItem("reyuProfilePhoto");
+    if (savedPhoto) profileImg.src = savedPhoto;
+
+    photoInput.addEventListener("change", e => {
+      const file = e.target.files[0];
+      if (!file || !file.type.startsWith("image/")) return;
+      if (file.size > 2.5 * 1024 * 1024) {
+        alert("Image must be smaller than 2.5MB.");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = ev => {
+        profileImg.src = ev.target.result;
+        try { localStorage.setItem("reyuProfilePhoto", ev.target.result); } catch(err){}
+      };
+      reader.readAsDataURL(file);
+    });
+
+    const progress = document.getElementById("progress");
+    const backTop = document.getElementById("backTop");
+    window.addEventListener("scroll", () => {
+      const s = window.scrollY;
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = `${h > 0 ? (s / h) * 100 : 0}%`;
+      if (s > 450) backTop.classList.add("show");
+      else backTop.classList.remove("show");
+    }, { passive: true });
+    backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    document.querySelectorAll(".spotlight-card, .flagship-feat-card, .project-card").forEach(c => {
+      c.addEventListener("mousemove", e => {
+        const r = c.getBoundingClientRect();
+        c.style.setProperty("--mouse-x", `${e.clientX - r.left}px`);
+        c.style.setProperty("--mouse-y", `${e.clientY - r.top}px`);
+      });
+    });
+
+    const typing = document.getElementById("typingText");
+    const phrases = [
+      "Developer \u2022 Designer \u2022 Creator",
+      "Crafting Clean Web Architectures",
+      "Turning Creative Concepts Into Reality"
+    ];
+    let pIdx = 0, cIdx = 0, del = false;
+    function runType() {
+      const p = phrases[pIdx];
+      typing.textContent = del ? p.substring(0, cIdx - 1) : p.substring(0, cIdx + 1);
+      cIdx += del ? -1 : 1;
+      if (!del && cIdx === p.length) { del = true; setTimeout(runType, 2000); return; }
+      else if (del && cIdx === 0) { del = false; pIdx = (pIdx + 1) % phrases.length; }
+      setTimeout(runType, del ? 35 : 75);
+    }
+    runType();
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+    /* =========================================================
+       6. FULLY ACTIVE CONTACT SUBMITTER
+    ========================================================= */
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById("userName").value.trim();
+      const email = document.getElementById("userEmail").value.trim();
+      const message = document.getElementById("userMessage").value.trim();
+      const submitBtn = e.target.querySelector("button[type='submit']");
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = "Transmitting Message...";
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/reyanmuzeyn@gmail.com", {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            Name: name,
+            Email: email,
+            Message: message,
+            _subject: `New Portfolio Message from ${name}`
+          })
+        });
+
+        if (response.ok) {
+          showToast("መልእክትዎ ወደ ኢሜይሌ ደርሷል! አመሰግናለሁ። (Message delivered!)");
+          e.target.reset();
+        } else {
+          window.location.href = `mailto:reyanmuzeyn@gmail.com?subject=Portfolio Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ")")}`;
+        }
+      } catch (err) {
+        window.location.href = `mailto:reyanmuzeyn@gmail.com?subject=Portfolio Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ")")}`;
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    }
+
+    /* =========================================================
+       7. BACKGROUND PARTICLES
+    ========================================================= */
+    const cvs = document.getElementById("particles");
+    const ctx = cvs.getContext("2d");
+    let parts = [];
+    function resize() {
+      cvs.width = window.innerWidth;
+      cvs.height = window.innerHeight;
+      parts = [];
+      const count = Math.min(80, Math.floor((cvs.width * cvs.height) / 13000));
+      for (let i = 0; i < count; i++) {
+        parts.push({
+          x: Math.random() * cvs.width,
+          y: Math.random() * cvs.height,
+          s: Math.random() * 2 + 0.6,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          a: Math.random() * 0.5 + 0.2
+        });
+      }
+    }
+    window.addEventListener("resize", resize);
+    function draw() {
+      ctx.clearRect(0, 0, cvs.width, cvs.height);
+      for (let i = 0; i < parts.length; i++) {
+        const p = parts[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = cvs.width; else if (p.x > cvs.width) p.x = 0;
+        if (p.y < 0) p.y = cvs.height; else if (p.y > cvs.height) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.s, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(245, 158, 11, ${p.a})`;
+        ctx.fill();
+        for (let j = i + 1; j < parts.length; j++) {
+          const p2 = parts[j];
+          const d = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (d < 100) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(245, 158, 11, ${0.08 * (1 - d / 100)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    resize();
+    draw();
+  </script>
+</body>
+</html>
